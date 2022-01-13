@@ -29,10 +29,8 @@ echo " const path = require('path');
    },
  };" >> webpack.config.js
 
-mkdir dist
-mkdir src
-touch dist/index.html
-touch src/index.js
+mkdir dist src
+touch dist/index.html src/index.js
 
 echo " <!DOCTYPE html>
  <html>
@@ -48,6 +46,7 @@ echo " <!DOCTYPE html>
 npm install eslint --save-dev
 ./node_modules/.bin/eslint --init
 npm install --save-dev --save-exact prettier
+echo {}> .prettierrc.json
 npx prettier --write .
 npm install --save-dev eslint-config-prettier
 sed -i 's/"airbnb-base"/&, "prettier"/' .eslintrc.json "airbnb-base", "prettier"]
